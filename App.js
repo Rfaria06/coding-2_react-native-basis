@@ -1,40 +1,42 @@
-import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import Constants from 'expo-constants';
+import React, { Component } from 'react';
 
-// You can import from local files
-import AssetExample from './components/AssetExample';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import ListView from './components/ListView';
 
-// or any pure javascript modules available in npm
-import { Card } from 'react-native-paper';
+  /*
+   TodoApp: Haupteinstiegpunkt
+     render -> ListView wird angezeigt
+  */
 
-export default class App extends React.Component {
+class TodoApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>
-          Schulhaus Felsberg App
-        </Text>
-        <Card>
-          <AssetExample />
-        </Card>
+      <Text>To-Do App
+      </Text>
+
+
+        <ListView></ListView>
       </View>
     );
   }
 }
 
+/*
+ Definition der CSS-Styles
+   im Objekt "styles" 
+*/
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
-    padding: 8,
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+    paddingTop: 30,
+    paddingBottom: 10,
+    paddingLeft: 2,
+    paddingRight: 2,
+    backgroundColor: '#F8F8F8',
+  }
 });
+
+export default TodoApp
